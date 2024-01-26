@@ -1,18 +1,25 @@
-const DashboardLayout = ({ children }: {
+"use client"
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
+
+const DashboardLayout = ({
+    children
+}: {
     children: React.ReactNode;
 }) => {
+
     return (
-        <div className="h-full relative">
-            <div className="hidden h-full md:flex md:w-72 md:flex-col md:fixed md:inset-y-0 z-[80] bg-gray-900">
-                <div>
-                    Hello Sidebar
-                </div>
+        <div className="">
+            <div className="flex items-center h-full justify-start ">
+                <Link href="/dashboard">
+                    <ArrowLeft
+                        className="ml-2 mr-2" />
+                </Link>
             </div>
-            <main className="md:pl-72">
-
-            </main>
+            {children}
         </div>
-    );
-};
 
-export default DashboardLayout;
+    )
+}
+
+export default DashboardLayout
