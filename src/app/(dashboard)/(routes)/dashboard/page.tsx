@@ -1,5 +1,5 @@
-import * as React from "react"
-import { Button } from "@/components/ui/button"
+import * as React from "react";
+import { Button } from "@/components/ui/button";
 import {
     Card,
     CardContent,
@@ -13,51 +13,123 @@ import Link from "next/link";
 
 const DashboardPage = () => {
     return (
-        <div className="">
-            <p>Dashboard Page(Protected)</p>
+        <div className="container mx-auto ">
+            <div className="flex w-full justify-center">
+            <p className="text-center text-2xl font-semibold py-4">Dashboard Page (Protected)</p>
+            </div>
+            <span className="flex w-full justify-end">
             <UserButton afterSignOutUrl="/" />
-            <div className="sm:flex gap-x-16 justify-center grid gap-y-3 py-3">
-                <Card className="w-[400px] col-span-1">
+            </span>
+            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 py-3">
+                <Card className="w-full">
                     <CardHeader>
                         <CardTitle className="text-3xl">Conversation</CardTitle>
-                        <CardDescription className="sm:text-lg text-sm py-0 sm:py-2 ">Hey do you want somenone to chat? Talk openly with me...</CardDescription>
+                        <CardDescription className="text-lg py-2">
+                            Hey, do you want someone to chat? Talk openly with me...
+                        </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">
-                        <Link href="/conversation"><Button>Open</Button></Link>
+                        <Link href="/conversation">
+                            <Button>Open</Button>
+                        </Link>
                     </CardFooter>
                 </Card>
-                <Card className="w-[400px] col-span-1">
+                <Card className="w-full">
                     <CardHeader>
                         <CardTitle className="text-3xl">Code Generation</CardTitle>
-                        <CardDescription className="sm:text-lg text-sm py-0 sm:py-2 ">Generate Your Desired Code with just one click...</CardDescription>
+                        <CardDescription className="text-lg py-2">
+                            Generate Your Desired Code with just one click...
+                        </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">
-                        <Link href="/code"><Button>Open</Button></Link>
+                        <Link href="/code">
+                            <Button>Open</Button>
+                        </Link>
                     </CardFooter>
                 </Card>
             </div>
-            <div className="sm:flex gap-x-16 md:py-10 justify-center grid">
-                <Card className="w-[400px] col-span-1 py-3 ">
+            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 py-10">
+                <Card className="w-full py-3">
                     <CardHeader>
                         <CardTitle className="text-3xl">Image Generation</CardTitle>
-                        <CardDescription className="sm:text-lg text-sm py-0 sm:py-2 ">Generate Your Desire Image with just one click...</CardDescription>
+                        <CardDescription className="text-lg py-2">
+                            Generate Your Desire Image with just one click...
+                        </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">
-                        <Link href="/images"><Button>Open</Button></Link>
+                        <Link href="/images">
+                            <Button>Open</Button>
+                        </Link>
                     </CardFooter>
                 </Card>
-                <Card className="w-[400px] col-span-1">
+                <Card className="w-full py-3">
                     <CardHeader>
-                        <CardTitle className="text-3xl">3D Modal</CardTitle>
-                        <CardDescription className="sm:text-lg text-sm py-0 sm:py-2 ">Create Your Desire Design of t-shirt in 3d with just one click..</CardDescription>
+                        <CardTitle className="text-3xl">3D Model</CardTitle>
+                        <CardDescription className="text-lg py-2">
+                            Create Your Desire Design of T-shirt in 3D with just one click..
+                        </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">
-                        <Link href="/images"><Button>Open</Button></Link>
+                        <Link href="/images">
+                            <Button>Open</Button>
+                        </Link>
+                    </CardFooter>
+                </Card>
+                <Card className="w-full py-3">
+                    <CardHeader>
+                        <CardTitle className="text-3xl">Whisper AI</CardTitle>
+                        <CardDescription className="text-lg py-2">
+                            OpenAI's Whisper API to Translate Audio to another Language + Text Translation with just one click..
+                        </CardDescription>
+                    </CardHeader>
+                    <CardFooter className="flex justify-end">
+                        <Link href="/images">
+                            <Button>Open</Button>
+                        </Link>
+                    </CardFooter>
+                </Card>
+                <Card className="w-full py-3">
+                    <CardHeader>
+                        <CardTitle className="text-3xl">3D Text to Speech</CardTitle>
+                        <CardDescription className="text-lg py-2">
+                            OpenAI's Whisper API to Translate Audio to another Language + Text Translation with just one click..
+                        </CardDescription>
+                    </CardHeader>
+                    <CardFooter className="flex justify-end">
+                        <Link href="/images">
+                            <Button>Open</Button>
+                        </Link>
+                    </CardFooter>
+                </Card>
+                <Card className="w-full py-3">
+                    <CardHeader>
+                        <CardTitle className="text-3xl">Speech To Text</CardTitle>
+                        <CardDescription className="text-lg py-2">
+                            OpenAI's Whisper API to Translate Audio to another Language + Text Translation with just one click..
+                        </CardDescription>
+                    </CardHeader>
+                    <CardFooter className="flex justify-end">
+                        <Link href="/images">
+                            <Button>Open</Button>
+                        </Link>
+                    </CardFooter>
+                </Card>
+                <Card className="w-full py-3 group hover:shadow-lg hover:-translate-y-1 transition-transform duration-200 ease-in-out">
+                    <CardHeader>
+                        <CardTitle className="text-3xl">Speech To Speech</CardTitle>
+                        <CardDescription className="text-lg py-2">
+                            OpenAI's Whisper API to Translate Audio to another Language + Text Translation with just one click..
+                        </CardDescription>
+                    </CardHeader>
+                    <CardFooter className="flex justify-end">
+                        <Link href="/images">
+                            <Button>Open</Button>
+                        </Link>
                     </CardFooter>
                 </Card>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default DashboardPage;
