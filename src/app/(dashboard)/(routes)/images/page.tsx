@@ -11,7 +11,6 @@ import axios from "axios";
 import * as z from "zod";
 import { formSchema } from "./constants";
 import { UserAvatar } from '@/components/user-avatar';
-import ReactMarkdown from "react-markdown";
 
 interface ChatCompletionRequestMessage {
     role: 'user' | 'assistant' | 'system';
@@ -19,7 +18,7 @@ interface ChatCompletionRequestMessage {
     name?: string;
 }
 
-const CodePage = () => {
+const ImagePage = () => {
     const router = useRouter();
     const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
 
@@ -41,7 +40,7 @@ const CodePage = () => {
             };
             const newMessages = [...messages, userMessage];
 
-            const response = await axios.post("/api/code", { messages: newMessages });
+            const response = await axios.post("/api/conversation", { messages: newMessages });
             setMessages((current) => [...current, userMessage, response.data]);
 
         } catch (error: any) {
@@ -55,27 +54,15 @@ const CodePage = () => {
     return (
         <div className="flex items-center justify-center flex-col w-full mt-10">
             <div className="text-4xl font-bold text-center mb-4">
-                Code 💬
+                Image 💬
             </div>
             <div className="space-y-4 mt-4 bottom-0">
                 <div className="flex flex-col-reverse gap-y-4">
                     {messages.map((message) => (
                         <div key={message.content}>
-                            <ReactMarkdown 
-                            components={{
-                                pre: ({node, ...props}) => (
-                                    <div className='overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg'>
-                                        <pre {...props} />
-                                    </div>
-                                ),
-                                code:({node, ...props}) => (
-                                    <code className='bg-black/10 rounded-lg p-1' {...props}/>
-                                )
-                            }}
-                            className="text-sm overflow-hidden leading-7"
-                            >
-                                {message.content || ""}
-                            </ReactMarkdown>
+                            <p className='text-sm'>
+                                {message.content}
+                            </p>
                         </div>
                     ))}
                 </div>
@@ -97,7 +84,7 @@ const CodePage = () => {
                                             focus-visible:ring-transparent
                                             "
                                         disabled={isLoading}
-                                        placeholder="Write your desired code"
+                                        placeholder="Turn Prompt into Image"
                                         {...field}
                                     />
                                 </FormItem>
@@ -113,5 +100,5 @@ const CodePage = () => {
     );
 };
 
-export default CodePage;
+export default ImagePage;
 
