@@ -11,6 +11,7 @@ import axios from "axios";
 import * as z from "zod";
 import { formSchema } from "./constants";
 import { UserAvatar } from '@/components/user-avatar';
+import ReactMarkdown from "react-markdown";
 
 interface ChatCompletionRequestMessage {
     role: 'user' | 'assistant' | 'system';
@@ -40,7 +41,7 @@ const ConversationPage = () => {
             };
             const newMessages = [...messages, userMessage];
 
-            const response = await axios.post("/api/conversation", { messages: newMessages });
+            const response = await axios.post("/api/code", { messages: newMessages });
             setMessages((current) => [...current, userMessage, response.data]);
 
         } catch (error: any) {
@@ -54,15 +55,27 @@ const ConversationPage = () => {
     return (
         <div className="flex items-center justify-center flex-col w-full mt-10">
             <div className="text-4xl font-bold text-center mb-4">
-                Conversation 💬
+                Code 💬
             </div>
             <div className="space-y-4 mt-4 bottom-0">
                 <div className="flex flex-col-reverse gap-y-4">
                     {messages.map((message) => (
                         <div key={message.content}>
-                            <p className='text-sm'>
-                                {message.content}
-                            </p>
+                            <ReactMarkdown 
+                            components={{
+                                pre: ({node, ...props}) => (
+                                    <div className='overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg'>
+                                        <pre {...props} />
+                                    </div>
+                                ),
+                                code:({node, ...props}) => (
+                                    <code className='bg-black/10 rounded-lg p-1' {...props}/>
+                                )
+                            }}
+                            className="text-sm overflow-hidden leading-7"
+                            >
+                                {message.content || ""}
+                            </ReactMarkdown>
                         </div>
                     ))}
                 </div>
@@ -84,7 +97,7 @@ const ConversationPage = () => {
                                             focus-visible:ring-transparent
                                             "
                                         disabled={isLoading}
-                                        placeholder="Who is Elon Musk?"
+                                        placeholder="Write your desired code"
                                         {...field}
                                     />
                                 </FormItem>
