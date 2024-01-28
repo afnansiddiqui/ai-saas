@@ -15,11 +15,9 @@ const DashboardPage = () => {
     return (
         <div className="container mx-auto ">
             <div className="flex w-full justify-center">
-            <p className="text-center text-2xl font-semibold py-4">Dashboard Page (Protected)</p>
+                <p className="text-center text-3xl lg:text-4xl font-semibold py-8">Dashboard</p>
             </div>
-            <span className="flex w-full justify-end">
-            <UserButton afterSignOutUrl="/" />
-            </span>
+
             <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 py-3">
                 <Card className="w-full">
                     <CardHeader>
@@ -57,7 +55,7 @@ const DashboardPage = () => {
                         </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">
-                        <Link href="/images">
+                        <Link href="/image">
                             <Button>Open</Button>
                         </Link>
                     </CardFooter>
@@ -79,7 +77,7 @@ const DashboardPage = () => {
                     <CardHeader>
                         <CardTitle className="text-3xl">Whisper AI</CardTitle>
                         <CardDescription className="text-lg py-2">
-                            OpenAI's Whisper API to Translate Audio to another Language + Text Translation with just one click..
+                            OpenAIs Whisper API to Translate Audio to another Language + Text Translation with just one click..
                         </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">
@@ -92,7 +90,7 @@ const DashboardPage = () => {
                     <CardHeader>
                         <CardTitle className="text-3xl">3D Text to Speech</CardTitle>
                         <CardDescription className="text-lg py-2">
-                            OpenAI's Whisper API to Translate Audio to another Language + Text Translation with just one click..
+                            OpenAIs Whisper API to Translate Audio to another Language + Text Translation with just one click..
                         </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">
@@ -105,7 +103,7 @@ const DashboardPage = () => {
                     <CardHeader>
                         <CardTitle className="text-3xl">Speech To Text</CardTitle>
                         <CardDescription className="text-lg py-2">
-                            OpenAI's Whisper API to Translate Audio to another Language + Text Translation with just one click..
+                            OpenAIs Whisper API to Translate Audio to another Language + Text Translation with just one click..
                         </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">
@@ -118,7 +116,7 @@ const DashboardPage = () => {
                     <CardHeader>
                         <CardTitle className="text-3xl">Speech To Speech</CardTitle>
                         <CardDescription className="text-lg py-2">
-                            OpenAI's Whisper API to Translate Audio to another Language + Text Translation with just one click..
+                            OpenAIs Whisper API to Translate Audio to another Language + Text Translation with just one click..
                         </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">

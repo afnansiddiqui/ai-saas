@@ -1,16 +1,21 @@
-'use client'
-
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormField, FormItem } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+"use client"
+import * as z from "zod"
+import Heading from "@/components/heading"
+import { MessageCircleQuestionIcon, MessageSquare, MessageSquareDot } from "lucide-react"
+import { useForm } from "react-hook-form"
+import { formSchema } from "./constants"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button" 
+import axios from "axios"
 import { useRouter } from "next/navigation";
-import axios from "axios";
-import * as z from "zod";
-import { formSchema } from "./constants";
-import { UserAvatar } from '@/components/user-avatar';
+import { useState } from "react"
+import { Empty } from "@/components/empty"
+import { Loader } from "@/components/loader"
+import { cn } from "@/lib/utils"
+import { UserAvatar } from "@/components/user-avatar"
+import { BotAvatar } from "@/components/bot-avatar"
 
 interface ChatCompletionRequestMessage {
     role: 'user' | 'assistant' | 'system';
@@ -27,78 +32,97 @@ const ConversationPage = () => {
         defaultValues: {
             prompt: ""
         }
-    });
+    })
 
     const isLoading = form.formState.isSubmitting;
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values);
+        console.log(values)
         try {
             const userMessage: ChatCompletionRequestMessage = {
                 role: "user",
                 content: values.prompt
-            };
-            const newMessages = [...messages, userMessage];
+            }
+            const newMessages = [...messages, userMessage]
 
-            const response = await axios.post("/api/conversation", { messages: newMessages });
+            const response = await axios.post("/api/conversation", { messages: newMessages })
             setMessages((current) => [...current, userMessage, response.data]);
 
         } catch (error: any) {
             //TODO OPEN PRO MODAL
-            console.log(error);
+            console.log(error)
         } finally {
             router.refresh();
         }
-    };
+    }
 
     return (
-        <div className="flex items-center justify-center flex-col w-full mt-10">
-            <div className="text-4xl font-bold text-center mb-4">
-                Conversation 💬
-            </div>
-            <div className="space-y-4 mt-4 bottom-0">
-                <div className="flex flex-col-reverse gap-y-4">
-                    {messages.map((message) => (
-                        <div key={message.content}>
-                            <p className='text-sm'>
-                                {message.content}
-                            </p>
+        <div>
+            <Heading
+                title="Conversation"
+                description="Conversation model."
+                icon={MessageCircleQuestionIcon}
+                iconColor="text-primary"
+                bgColor="bg-primary/10"
+            />
+            <div className="px-4 lg:px-8">
+                <div>
+                    <Form {...form}>
+                        <form
+                            onSubmit={form.handleSubmit(onSubmit)}
+                            className="rounded-lg border w-full p-4 px-3 md:px-6
+                            focus-within:shadow-sm grid  grid-cols-12 gap-2 "
+                        >
+                            <FormField
+                                name="prompt"
+                                render={({ field }) => (
+                                    <FormItem className="col-span-12 lg:col-span-10">
+                                        <FormControl className="m-0 p-0 ">
+                                            <Input
+                                                className="border-0 outline-none focus-visible:ring-0
+                                                focus-visible:ring-transparent"
+                                                disabled={isLoading}
+                                                placeholder="Hello from Ebrain AI... How Can I assist you?"
+                                                {...field}
+                                            />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+                            <Button className="col-span-12 lg:col-span-2 w-full" disabled={isLoading}>
+                                Generate
+                            </Button>
+                        </form>
+                    </Form>
+                </div>
+                <div className="space-y-4 mt-4">
+                    {isLoading && (
+                        <div className="p-8 rounded-lg w-full flex items-center justify-center bg-secondary">
+                            <Loader />
                         </div>
-                    ))}
+                    )}
+                    {messages.length === 0 && !isLoading && (
+                        <Empty label="No Conversation Started" />
+                    )}
+                    <div className="flex flex-col-reverse gap-y-4">
+                        {messages.map((message) => (
+                            <div key={message.content}
+                                className={cn(
+                                    "p-8 w-full flex items-start gap-x-8 rounded-lg",
+                                    message.role === "user" ? "bg-dark border-black/10 " : "bg-muted"
+                                )}
+                            >
+                                {message.role === "user" ? <UserAvatar /> :
+                                    <BotAvatar />
+                                }
+                                <p className="text-sm">{message.content}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-            <div className="px-4 lg:px-8 flex items-center absolute inset-x-0 bottom-0 h-16">
-                <Form {...form}>
-                    <form
-                        onSubmit={form.handleSubmit(onSubmit)}
-                        className="rounded-lg border border-black w-full p-4 px-3 md:px-6 focus-within:shadow-sm grid grid-cols-12 gap-2 sm:w-full"
-                    >
-                        <FormField
-                            name="prompt"
-                            render={({ field }) => (
-                                <FormItem className="col-span-12 lg:col-span-10">
-                                    <Input
-                                        className="border-0
-                                            outline-none 
-                                            focus-visible:ring-0 
-                                            focus-visible:ring-transparent
-                                            "
-                                        disabled={isLoading}
-                                        placeholder="Who is Elon Musk?"
-                                        {...field}
-                                    />
-                                </FormItem>
-                            )}
-                        />
-                        <Button className="col-span-12 lg:col-span-2 w-full">
-                            Generate
-                        </Button>
-                    </form>
-                </Form>
-            </div>
         </div>
-    );
-};
+    )
+}
 
-export default ConversationPage;
-
+export default ConversationPage
