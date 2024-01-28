@@ -5,7 +5,7 @@ const LandingPage = () => {
     return (
         <>
             <div>
-                Landing Page (Unprotected) from Afnan
+                Landing Page (Unprotected) from Afnan and umar
             </div>
             <div>
                 <Link href="/sign-in">
