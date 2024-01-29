@@ -178,10 +178,11 @@ const Customizer = () => {
             ))}
             <button className="download-btn" onClick={downloadCanvasToImage}>
               <Image
-                // src={download}
                 alt="download_image"
                 className="w-3/5 h-3/5 object-contain"
-                src={""}
+                src={"/download.png"}
+                width={30}
+                height={30}
               />
             </button>
           </motion.div>
