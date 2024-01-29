@@ -1,28 +1,38 @@
-// constants.ts
+import { swatch, fileIcon, ai, logoShirt, stylishShirt } from "@/assets/index";
 
 export const EditorTabs = [
   {
     name: "colorpicker",
-    icon: "swatch.png",
+    icon: swatch,
+    width: 30,
+    height: 30,
   },
   {
     name: "filepicker",
-    icon: "file.png",
+    icon: fileIcon,
+    width: 30,
+    height: 30,
   },
   {
     name: "aipicker",
-    icon: "ai.png",
+    icon: ai,
+    width: 30,
+    height: 30,
   },
 ];
 
 export const FilterTabs = [
   {
     name: "logoShirt",
-    icon: "logo-tshirt.png",
+    icon: logoShirt,
+    width: 30,
+    height: 30,
   },
   {
     name: "stylishShirt",
-    icon: "stylish-tshirt.png",
+    icon: stylishShirt,
+    width: 30,
+    height: 30,
   },
 ];
 
