@@ -27,6 +27,9 @@ const Customizer = () => {
     logoShirt: true,
     stylishShirt: false,
   })
+  const closeEditorTab = () => {
+    setActiveEditorTab('');
+  };
 
   // show tab content depending on the activeTab
   const generateTabContent = () => {
@@ -135,14 +138,18 @@ const Customizer = () => {
             className="absolute top-0 left-0 z-10 "
             {...slideAnimation('left')}
           >
-            <div className="flex items-center min-h-screen">
+            <div className="flex items-center h-screen">
               <div className="editortabs-container tabs">
                 {EditorTabs.map((tab) => (
                   <Tab
                     icon={tab.icon}
                     key={tab.name}
                     tab={tab}
-                    handleClick={() => setActiveEditorTab(tab.name)}
+                    handleClick={() => {
+                      setActiveEditorTab((prevTab) =>
+                        prevTab === tab.name ? '' : tab.name
+                      );
+                    }}
                   />
                 ))}
 
