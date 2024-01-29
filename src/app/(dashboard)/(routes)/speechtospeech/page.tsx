@@ -1,7 +1,7 @@
 'use client';
+import 'regenerator-runtime/runtime';
 import React, { useEffect, useState } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
-
 
 export default function App() {
   const { listening, transcript } = useSpeechRecognition();
@@ -55,7 +55,7 @@ export default function App() {
   return (
     <>
       {listening ? (
-        <p>Go Ahead I'm Listening......</p>
+        <p>Go Ahead I&apos;m Listening......</p>
       ) : (
         <p>Click the button and ask me anything</p>
       )}
