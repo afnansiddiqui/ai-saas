@@ -29,13 +29,13 @@ const Home = () => {
               alt='logo'
               height={300}
               width={300}
-              className='w-8 h-8 object-contain'
+              className='w-20 h-20 object-contain'
             />
           </motion.header>
           <motion.div className='home-content' {...headContainerAnimation}>
             <motion.div {...headTextAnimation}>
               <h1 className='text-9xl font-bold '>
-                LET&apos;S <br className='xl:block hidden' /> DO IT
+                3D AI <br className='xl:block hidden' /> Shirt
               </h1>
             </motion.div>
             <motion.div
