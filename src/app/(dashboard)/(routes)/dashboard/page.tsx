@@ -68,7 +68,7 @@ const DashboardPage = () => {
                         </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">
-                        <Link href="/images">
+                        <Link href="/3dshirt">
                             <Button>Open</Button>
                         </Link>
                     </CardFooter>
@@ -81,7 +81,7 @@ const DashboardPage = () => {
                         </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">
-                        <Link href="/images">
+                        <Link href="/whisper">
                             <Button>Open</Button>
                         </Link>
                     </CardFooter>
@@ -94,20 +94,7 @@ const DashboardPage = () => {
                         </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">
-                        <Link href="/images">
-                            <Button>Open</Button>
-                        </Link>
-                    </CardFooter>
-                </Card>
-                <Card className="w-full py-3">
-                    <CardHeader>
-                        <CardTitle className="text-3xl">Speech To Text</CardTitle>
-                        <CardDescription className="text-lg py-2">
-                            OpenAIs Whisper API to Translate Audio to another Language + Text Translation with just one click..
-                        </CardDescription>
-                    </CardHeader>
-                    <CardFooter className="flex justify-end">
-                        <Link href="/images">
+                        <Link href="/3dtext">
                             <Button>Open</Button>
                         </Link>
                     </CardFooter>
@@ -120,7 +107,7 @@ const DashboardPage = () => {
                         </CardDescription>
                     </CardHeader>
                     <CardFooter className="flex justify-end">
-                        <Link href="/images">
+                        <Link href="/speechtospeech">
                             <Button>Open</Button>
                         </Link>
                     </CardFooter>
