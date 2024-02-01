@@ -25,26 +25,19 @@ const LandingPage = () => {
             </div>
             {/* Navbar */}
             <div className="fixed top-0 left-0 bg-opacity-100 w-full flex justify-between items-center bg-transparent py-4 shadow-xl border-b-2 mb-8 border-white/10 ">
-                <div className="font-bold text-3xl px-4 text-white ">
+                <div className="font-bold sm:text-3xl text-2xl px-4 text-white ">
                     Orbitio
                 </div>
-                <div className="gap-x-2 flex justify-end px-4 items-center">
-                    <div>
-                        <Link href="/dashboard" className="text-white font-bold" >
-                            Dashboard
-                        </Link>
-                    </div>
-                    <div>
-                        <Link href="/sign-in">
-                            <Button>
-                                Log in
-                            </Button>
-                        </Link>
-                    </div>
-                    <div>
-                        <UserButton afterSignOutUrl="/" />
-                    </div>
-
+                <div className="gap-x-2 flex px-4 justify-end items-center">
+                    <Link href="/dashboard" className="text-white font-bold text-sm sm:text-lg" >
+                        Dashboard
+                    </Link>
+                    <Link href="/sign-in">
+                        <Button>
+                            Log in
+                        </Button>
+                    </Link>
+                    <UserButton afterSignOutUrl="/" />
                 </div>
             </div>
             {/* {HERO SECTION} */}
