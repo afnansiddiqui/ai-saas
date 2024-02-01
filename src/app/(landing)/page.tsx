@@ -7,6 +7,7 @@ import umar from "../../../public/umar.jpeg";
 import afnan from "../../../public/afnan.jpg";
 import mustafa from "../../../public/mustafa.jpg";
 import asad from "../../../public/asad.jpg";
+import { UserButton } from "@clerk/nextjs";
 
 const LandingPage = () => {
     return (
@@ -27,7 +28,7 @@ const LandingPage = () => {
                 <div className="font-bold text-3xl px-4 text-white ">
                     Orbitio
                 </div>
-                <div className="gap-x-2 flex px-4 items-center">
+                <div className="gap-x-2 flex justify-end px-4 items-center">
                     <div>
                         <Link href="/dashboard" className="text-white font-bold" >
                             Dashboard
@@ -40,12 +41,15 @@ const LandingPage = () => {
                             </Button>
                         </Link>
                     </div>
+                    <div>
+                        <UserButton afterSignOutUrl="/" />
+                    </div>
 
                 </div>
             </div>
             {/* {HERO SECTION} */}
-            <div className="h-full sm:flex sm:justify-around">
-                <div className="px-4 lg:px-8 pt-[10rem] sm:py-[10rem] md:col-span-6 col-span-12 text-center sm:text-left" >
+            <div className="h-full  sm:flex sm:px-16 sm:justify-around ">
+                <div className="px-4 pt-[10rem] sm:py-[10rem] md:col-span-6 col-span-12 text-center sm:text-left" >
                     <h1 className="text-white lg:text-8xl text-6xl font-extrabold">Orbitio</h1>
                     <p className="text-[#fff] py-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <div className="">
