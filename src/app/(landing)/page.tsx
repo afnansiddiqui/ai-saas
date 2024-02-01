@@ -54,7 +54,7 @@ const LandingPage = () => {
                         </button>
                     </Link>
                 </div>
-                <div className='sm:py-16 py-8 sm:ml-auto'>
+                <div className='sm:py-16 py-8 sm:ml-auto sm:mt-8'>
                     <div className="sm:text-left">
                         <Image
                             src={anda}
