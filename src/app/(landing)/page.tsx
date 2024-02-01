@@ -7,6 +7,7 @@ import umar from "../../../public/umar.jpeg";
 import afnan from "../../../public/afnan.jpg";
 import mustafa from "../../../public/mustafa.jpg";
 import asad from "../../../public/asad.jpg";
+import { UserButton } from "@clerk/nextjs";
 
 const LandingPage = () => {
     return (
@@ -27,7 +28,7 @@ const LandingPage = () => {
                 <div className="font-bold text-3xl px-4 text-white ">
                     Orbitio
                 </div>
-                <div className="gap-x-2 flex px-4 items-center">
+                <div className="gap-x-2 flex justify-end px-4 items-center">
                     <div>
                         <Link href="/dashboard" className="text-white font-bold" >
                             Dashboard
@@ -40,21 +41,32 @@ const LandingPage = () => {
                             </Button>
                         </Link>
                     </div>
+                    <div>
+                        <UserButton afterSignOutUrl="/" />
+                    </div>
 
                 </div>
             </div>
             {/* {HERO SECTION} */}
-            <div className="h-full sm:flex sm:justify-between">
-                <div className="px-4 lg:px-8 pt-[10rem] sm:py-[10rem] md:col-span-6 col-span-12 text-center sm:text-left" >
+            <div className="h-full  sm:flex sm:px-16 sm:justify-around ">
+                <div className="px-4 pt-[10rem] sm:py-[10rem] md:col-span-6 col-span-12 text-center sm:text-left" >
                     <h1 className="text-white lg:text-8xl text-6xl font-extrabold">Orbitio</h1>
                     <p className="text-[#fff] py-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <Link href="/sign-up">
-                        <button className="border-2 px-4 py-2 rounded-lg mt-1 text-[#fff] ">
-                            Sign Up for free Now
-                        </button>
-                    </Link>
+                    <div className="">
+                        <Link href="/sign-up">
+                            <button className="px-1 py-1 w-full sm:w-fit mb-2 sm:mb-0 sm:mr-2 rounded bg-gradient-to-br from-[#FF0065] to-[#81039B] hover:bg-slate-800 text-white mt-3">
+                                <span className='block bg-white/10 rounded px-3 py-1'>Sign Up for free Now</span>
+                            </button>
+                        </Link>
+
+                        <Link href="/sign-in">
+                            <button className='px-4 py-2 w-full sm:w-fit rounded bg-gradient-to-br from-[#FF0065] to-[#81039B] hover:bg-slate-200 text-white'>
+                                Sign In
+                            </button>
+                        </Link>
+                    </div>
                 </div>
-                <div className='sm:py-16 py-8 sm:ml-auto'>
+                <div className='sm:py-16 py-8 sm:ml-auto sm:mt-8'>
                     <div className="sm:text-left">
                         <Image
                             src={anda}
