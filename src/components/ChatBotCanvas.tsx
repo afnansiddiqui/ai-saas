@@ -44,7 +44,7 @@ const Head = () => {
     }, [isPlaying, action])
     return (
         <>
-            <primitive object={model.scene} scale={4} rotation-z={0.2} />
+            <primitive object={model.scene} scale={5} rotation-z={0.2} />
             {/* <Torch position={[3,2,2]}/> */}
         </>
     )
