@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import orbitiobg from "../../../public/orbitiobg.jpg";
+import orbitiobg from "../../../public/bg-purple.jpg";
+import anda from "../../../public/anda.png";
 import umar from "../../../public/umar.jpeg";
 import afnan from "../../../public/afnan.jpg";
 import mustafa from "../../../public/mustafa.jpg";
@@ -22,30 +23,29 @@ const LandingPage = () => {
 
             </div>
             {/* Navbar */}
-            <div className="flex justify-between items-center bg-transparent py-4 shadow-xl border-b-2 border-white/10 ">
+            <div className="fixed top-0 left-0 bg-opacity-100 w-full flex justify-between items-center bg-transparent py-4 shadow-xl border-b-2 mb-8 border-white/10 ">
                 <div className="font-bold text-3xl px-4 text-white ">
-                    Orbitio afnan
+                    Orbitio
                 </div>
-                <div className="gap-x-2 flex px-4">
+                <div className="gap-x-2 flex px-4 items-center">
+                    <div>
+                        <Link href="/dashboard" className="text-white font-bold" >
+                            Dashboard
+                        </Link>
+                    </div>
                     <div>
                         <Link href="/sign-in">
                             <Button>
-                                Login
+                                Log in
                             </Button>
                         </Link>
                     </div>
-                    <div>
-                        <Link href="/sign-up">
-                            <Button>
-                                Sign Up for free
-                            </Button>
-                        </Link>
-                    </div>
+
                 </div>
             </div>
             {/* {HERO SECTION} */}
-            <div className="h-full relative flex text-center justify-center">
-                <div className="absolute top-1/3 left-1/2  -translate-x-1/2 -translate-y-1/2 " >
+            <div className="h-full sm:flex sm:justify-between">
+                <div className="px-4 lg:px-8 pt-[10rem] sm:py-[10rem] md:col-span-6 col-span-12 text-center sm:text-left" >
                     <h1 className="text-white lg:text-8xl text-6xl font-extrabold">Orbitio</h1>
                     <p className="text-[#fff] py-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <Link href="/sign-up">
@@ -54,14 +54,26 @@ const LandingPage = () => {
                         </button>
                     </Link>
                 </div>
+                <div className='sm:py-16 py-8 sm:ml-auto'>
+                    <div className="sm:text-left">
+                        <Image
+                            src={anda}
+                            alt='Umar Khan developer Image'
+                            className='mx-auto sm:mx-0'
+                            width={400}
+                            height={400}
+                        />
+                    </div>
+                </div>
             </div>
+
             {/* Video */}
-            <div className="flex justify-center py-10 px-6 lg:px-0">
+            <div className="flex justify-center py-10 px-6 lg:px-0 mt-24 sm:mt-0">
                 <iframe width="900" height="400" src="https://www.youtube.com/embed/hJ96188sXVY?si=HSK-eRHXZ6U5rk_7" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             </div >
             {/* WORKHOLIC */}
             <div className="py-16 text-center">
-                <h1 className="text-black lg:text-6xl text-4xl font-extrabold lg:pt-8 pt-6">Orbitio Commandos</h1>
+                <h1 className="text-white lg:text-6xl text-4xl font-extrabold lg:pt-8 pt-6">Orbitio Commandos</h1>
                 <div className="flex justify-center gap-x-4 lg:gap-x-12 lg:py-12 py-8 px-4 lg:px-0">
                     <div>
                         <Link href="https://www.linkedin.com/in/mustafa-abrar/" target="_blank">
