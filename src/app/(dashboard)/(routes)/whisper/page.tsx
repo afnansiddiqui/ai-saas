@@ -9,7 +9,7 @@ import AudioTranslate from "../../../../components/AudioTranslate";
 import Header from "../../../../components//Header";
 import TextTranslate from "../../../../components/TextTranslate";
 
-const whisper = () => {
+const Whisper = () => {
   const [mode, setMode] = useState<Boolean>(true);
 
   return (
@@ -22,7 +22,7 @@ const whisper = () => {
           Lets Translate
         </h1>
         <p className="sm:text-xl text-lg max-w-md font-bold text-primary mt-5">
-          Using OpenAI's Whisper + GPT-3.5 API
+          Using OpenAI&apos;s Whisper + GPT-3.5 API
         </p>
         <div className="flex mt-5 mb-[-5px]">
           <button
@@ -58,4 +58,4 @@ const whisper = () => {
   );
 }
 
-export default whisper
+export default Whisper

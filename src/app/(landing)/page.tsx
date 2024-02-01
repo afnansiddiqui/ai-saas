@@ -24,7 +24,7 @@ const LandingPage = () => {
             {/* Navbar */}
             <div className="flex justify-between items-center bg-transparent py-4 shadow-xl border-b-2 border-white/10 ">
                 <div className="font-bold text-3xl px-4 text-white ">
-                    Orbitio afnan
+                    Orbitio
                 </div>
                 <div className="gap-x-2 flex px-4">
                     <div>
