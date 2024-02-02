@@ -8,6 +8,7 @@ import afnan from "../../../public/afnan.jpg";
 import mustafa from "../../../public/mustafa.jpg";
 import asad from "../../../public/asad.jpg";
 import { UserButton } from "@clerk/nextjs";
+import Footer from "@/components/footer";
 
 const LandingPage = () => {
     return (
@@ -25,31 +26,24 @@ const LandingPage = () => {
             </div>
             {/* Navbar */}
             <div className="fixed top-0 left-0 bg-opacity-100 w-full flex justify-between items-center bg-transparent py-4 shadow-xl border-b-2 mb-8 border-white/10 ">
-                <div className="font-bold text-3xl px-4 text-white ">
+                <div className="font-bold sm:text-3xl text-2xl px-4 text-black ">
                     Orbitio
                 </div>
-                <div className="gap-x-2 flex justify-end px-4 items-center">
-                    <div>
-                        <Link href="/dashboard" className="text-white font-bold" >
-                            Dashboard
-                        </Link>
-                    </div>
-                    <div>
-                        <Link href="/sign-in">
-                            <Button>
-                                Log in
-                            </Button>
-                        </Link>
-                    </div>
-                    <div>
-                        <UserButton afterSignOutUrl="/" />
-                    </div>
-
+                <div className="gap-x-2 flex px-4 justify-end items-center">
+                    <Link href="/dashboard" className="text-white font-bold text-sm sm:text-lg" >
+                        Dashboard
+                    </Link>
+                    <Link href="/sign-in">
+                        <Button>
+                            Log in
+                        </Button>
+                    </Link>
+                    <UserButton afterSignOutUrl="/" />
                 </div>
             </div>
             {/* {HERO SECTION} */}
             <div className="h-full  sm:flex sm:px-16 sm:justify-around ">
-                <div className="px-4 pt-[10rem] sm:py-[10rem] md:col-span-6 col-span-12 text-center sm:text-left" >
+                <div className="px-4 pt-[10rem] sm:py-[12rem] md:col-span-6 col-span-12 text-center sm:text-left" >
                     <h1 className="text-white lg:text-8xl text-6xl font-extrabold">Orbitio</h1>
                     <p className="text-[#fff] py-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <div className="">
@@ -86,65 +80,90 @@ const LandingPage = () => {
             {/* WORKHOLIC */}
             <div className="py-16 text-center">
                 <h1 className="text-white lg:text-6xl text-4xl font-extrabold lg:pt-8 pt-6">Orbitio Commandos</h1>
-                <div className="flex justify-center gap-x-4 lg:gap-x-12 lg:py-12 py-8 px-4 lg:px-0">
-                    <div>
-                        <Link href="https://www.linkedin.com/in/mustafa-abrar/" target="_blank">
-                            <div className="lg:w-40 lg:h-40 w-24 h-24 rounded-full bg-white relative">
-                                <Image
-                                    src={mustafa}
-                                    alt="men"
-                                    fill
-                                    objectFit="cover"
-                                    className="rounded-full"
-                                />
-                            </div>
-                            <h1 className="text-secondary/90 bg-black rounded-xl text-lg py-1 cursor-pointer">Mustafa Abrar</h1>
-                        </Link>
-                    </div>
-                    <div>
-                        <Link href="https://www.linkedin.com/in/umarkhaan/" target="_blank">
-                            <div className="lg:w-40 lg:h-40 w-24 h-24 rounded-full bg-white relative">
-                                <Image
-                                    src={umar}
-                                    alt="umar"
-                                    fill
-                                    objectFit="cover"
-                                    className="rounded-full"
-                                />
-                            </div>
-                            <h1 className="text-secondary/90 bg-black rounded-xl text-lg py-1 cursor-pointer">Umar Khan</h1>
-                        </Link>
-                    </div>
-                    <div>
-                        <Link href="https://www.linkedin.com/in/expert-jamstack-nextjs-react-webdeveloper/?originalSubdomain=pk" target="_blank">
-                            <div className="lg:w-40 lg:h-40 w-24 h-24 rounded-full bg-white relative">
-                                <Image
-                                    src={afnan}
-                                    alt="afnan"
-                                    fill
-                                    objectFit="cover"
-                                    className="rounded-full"
-                                />
-                            </div>
-                            <h1 className="text-secondary/90 bg-black rounded-xl text-lg py-1 cursor-pointer">Muhm. Afnan</h1>
-                        </Link>
-                    </div>
-                    <div>
-                        <Link href="https://www.linkedin.com/in/syed-asad-raza-/" target="_blank">
-                            <div className="lg:w-40 lg:h-40 w-24 h-24 rounded-full bg-white relative">
-                                <Image
-                                    src={asad}
-                                    alt="asad"
-                                    fill
-                                    objectFit="cover"
-                                    className="rounded-full"
-                                />
-                            </div>
-                            <h1 className="text-secondary/90 bg-black rounded-xl text-lg py-1 cursor-pointer">Syed Asad</h1>
-                        </Link>
-                    </div>
+                <div className="flex mx-auto justify-center gap-x-4 lg:gap-x-12 lg:py-12 py-8 px-4 lg:px-0">
+                    <Link href="https://www.linkedin.com/in/mustafa-abrar/" target="_blank">
+                        <div className="lg:w-40 lg:h-40 md:w-24 md:h-24 w-16 h-16 rounded-full  bg-white relative">
+                            <Image
+                                src={mustafa}
+                                alt="men"
+                                fill
+                                objectFit="cover"
+                                className="rounded-full"
+                            />
+                        </div>
+                        <h1 className="text-secondary/90 bg-transparent rounded-xl sm:text-lg text-sm py-2  cursor-pointer">Mustafa Abrar</h1>
+                    </Link>
+                    <Link href="https://www.linkedin.com/in/umarkhaan/" target="_blank">
+                        <div className="lg:w-40 lg:h-40 md:w-24 md:h-24 w-16 h-16 rounded-full bg-white relative">
+                            <Image
+                                src={umar}
+                                alt="umar"
+                                fill
+                                objectFit="cover"
+                                className="rounded-full"
+                            />
+                        </div>
+                        <h1 className="text-secondary/90 bg-transparent rounded-xl sm:text-lg text-sm py-2 cursor-pointer">Umar Khan</h1>
+                    </Link>
+
+                    <Link href="https://www.linkedin.com/in/expert-jamstack-nextjs-react-webdeveloper/?originalSubdomain=pk" target="_blank">
+                        <div className="lg:w-40 lg:h-40  md:w-24 md:h-24 w-16 h-16 rounded-full bg-white relative">
+                            <Image
+                                src={afnan}
+                                alt="afnan"
+                                fill
+                                objectFit="cover"
+                                className="rounded-full"
+                            />
+                        </div>
+                        <h1 className="text-secondary/90 bg-transparent rounded-xl sm:text-lg text-sm py-2 cursor-pointer">Muhm. Afnan</h1>
+                    </Link>
+                    <Link href="https://www.linkedin.com/in/syed-asad-raza-/" target="_blank">
+                        <div className="lg:w-40 lg:h-40  md:w-24 md:h-24 w-16 h-16 rounded-full bg-white relative">
+                            <Image
+                                src={asad}
+                                alt="asad"
+                                fill
+                                objectFit="cover"
+                                className="rounded-full"
+                            />
+                        </div>
+                        <h1 className="text-secondary/90 bg-transparent rounded-xl sm:text-lg text-sm py-2 cursor-pointer">Syed Asad</h1>
+                    </Link>
                 </div>
             </div>
+            {/*  */}
+
+            <section className="py-16 text-white grid sm:grid-cols-2 gap-4 px-8">
+                <div className="self-center order-2">
+                    <h2 className="text-3xl font-bold py-2">
+                        About Orbito
+                    </h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia molestias eum
+                        ad sed quibusdam non, architecto nobis quasi similique libero, alias dicta
+                        consectetur quaerat commodi doloremque nihil corrupti aut natus voluptatibus.
+                        Eius cupiditate totam, repellat ipsa cumque amet hic! Facilis nostrum, autem sed debitis officia fugit veritatis doloremque ex harum
+                        provident minus nulla laboriosam error sapiente vero corporis ad quod sequi,
+                        mollitia dolorum! Magnam error quae repellat, officiis distinctio fugiat doloribus
+                        dolorum ut, dicta rerum voluptate. Possimus, at doloremque quod vero asperiores
+                        ea dicta odit nobis, veritatis eos voluptatibus necessitatibus molestias cum
+                        placeat fuga perspiciatis illum quia nostrum consequuntur adipisci corrupti
+                    </p>
+                </div>
+                <div className="self-center order-1">
+                    <Image
+                        src={anda}
+                        alt='Umar Khan developer Image'
+                        className='mx-auto sm:mx-0'
+                        width={400}
+                        height={400}
+                    />
+                </div>
+            </section>
+
+            {/* footer */}
+            <Footer />
         </>
     );
 };
