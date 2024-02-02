@@ -22,7 +22,7 @@ const Torch = ({ vec = new Vector3(), ...props }) => {
 			angle={10}
 			attenuation={5}
 			anglePower={4}
-			intensity={5}
+			intensity={10}
 			{...props}
 		/>
 	);
@@ -47,10 +47,10 @@ const Head = () => {
 	return (
 		<>
 			<primitive object={model.scene} scale={5} rotation-z={0.2} />
-			<Torch position={[0, 2.5, 3]} />
-			<Torch position={[0, -2.5, 3]} />
-			<Torch position={[3, 0, 3]} />
-			<Torch position={[-3, 0, 3]} />
+			<Torch position={[0, 2.5, 5]} />
+			<Torch position={[0, -2.5, 5]} />
+			<Torch position={[3, 0, 5]} />
+			<Torch position={[-3, 0, 5]} />
 		</>
 	);
 };
