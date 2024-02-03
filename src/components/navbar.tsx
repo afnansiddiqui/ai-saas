@@ -17,7 +17,7 @@ export const Navbar = () => {
                     </Link>
                 </div>
                 <div className="flex justify-end w-full  gap-x-2 items-center">
-                    <ModeToggle />
+                    {/* <ModeToggle /> */}
                     <UserButton afterSignOutUrl="/" />
                 </div>
             </div>
