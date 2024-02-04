@@ -10,6 +10,14 @@ body,
 :root {
   height: 100%;
 }
+
+body {
+  background-image: url('/public/bg-purple.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 html {
   font-family: "Inter", sans-serif;
 }

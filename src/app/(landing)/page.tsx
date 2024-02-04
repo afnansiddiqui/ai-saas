@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import orbitiobg from "../../../public/bg-purple.jpg";
@@ -9,6 +8,7 @@ import mustafa from "../../../public/mustafa.jpg";
 import asad from "../../../public/asad.jpg";
 import { UserButton } from "@clerk/nextjs";
 import Footer from "@/components/footer";
+import LandingNavbar from "@/components/LandingNavbar";
 
 const LandingPage = () => {
 	return (
@@ -17,29 +17,9 @@ const LandingPage = () => {
 			<div className="-z-10 fixed w-full h-[150vh]">
 				<Image src={orbitiobg} alt="orbitio" fill objectFit="cover" />
 			</div>
+
 			{/* Navbar */}
-			<div
-				className="fixed top-0 left-0 bg-opacity-100 w-full flex justify-between items-center
-       bg-[#FF0065]/40 py-4 shadow-3xl border-b-2 mb-8 border-white/10"
-			>
-				<div className="font-bold sm:text-3xl text-2xl px-4 text-white ">
-					OrbitIo
-				</div>
-				<div className="gap-x-2 flex px-4 justify-end items-center">
-					<Link
-						href="/dashboard"
-						className="text-white font-bold text-sm sm:text-lg"
-					>
-						Dashboard
-					</Link>
-					{/* <Link href="/sign-in">
-                        <Button>
-                            Log in
-                        </Button>
-                    </Link> */}
-					<UserButton afterSignOutUrl="/" />
-				</div>
-			</div>
+			<LandingNavbar />
 			{/* {HERO SECTION} */}
 			<div className="h-full  sm:flex sm:px-16 sm:justify-around ">
 				<div className="px-4 pt-[10rem] sm:py-[12rem] md:col-span-6 col-span-12 text-center sm:text-left">
@@ -98,7 +78,7 @@ const LandingPage = () => {
 						href="https://www.linkedin.com/in/mustafa-abrar/"
 						target="_blank"
 					>
-						<div className="lg:w-40 lg:h-40 md:w-24 md:h-24 w-16 h-16 rounded-full  bg-white relative">
+						<div className="lg:w-40 lg:h-40 md:w-24 md:h-24 w-16 h-16 rounded-full  bg-white relative -z-10">
 							<Image
 								src={mustafa}
 								alt="men"
@@ -107,12 +87,12 @@ const LandingPage = () => {
 								className="rounded-full"
 							/>
 						</div>
-						<h1 className="text-secondary/90 bg-transparent rounded-xl sm:text-lg text-sm py-2  cursor-pointer">
+						<h1 className="text-primary bg-transparent rounded-xl sm:text-lg text-sm py-2  cursor-pointer">
 							Mustafa Abrar
 						</h1>
 					</Link>
 					<Link href="https://www.linkedin.com/in/umarkhaan/" target="_blank">
-						<div className="lg:w-40 lg:h-40 md:w-24 md:h-24 w-16 h-16 rounded-full bg-white relative">
+						<div className="lg:w-40 lg:h-40 md:w-24 md:h-24 w-16 h-16 rounded-full bg-white relative -z-10">
 							<Image
 								src={umar}
 								alt="umar"
@@ -121,7 +101,7 @@ const LandingPage = () => {
 								className="rounded-full"
 							/>
 						</div>
-						<h1 className="text-secondary/90 bg-transparent rounded-xl sm:text-lg text-sm py-2 cursor-pointer">
+						<h1 className="text-primary bg-transparent rounded-xl sm:text-lg text-sm py-2 cursor-pointer">
 							Umar Khan
 						</h1>
 					</Link>
@@ -130,7 +110,7 @@ const LandingPage = () => {
 						href="https://www.linkedin.com/in/expert-jamstack-nextjs-react-webdeveloper/?originalSubdomain=pk"
 						target="_blank"
 					>
-						<div className="lg:w-40 lg:h-40  md:w-24 md:h-24 w-16 h-16 rounded-full bg-white relative">
+						<div className="lg:w-40 lg:h-40  md:w-24 md:h-24 w-16 h-16 rounded-full bg-white relative -z-10">
 							<Image
 								src={afnan}
 								alt="afnan"
@@ -139,7 +119,7 @@ const LandingPage = () => {
 								className="rounded-full"
 							/>
 						</div>
-						<h1 className="text-secondary/90 bg-transparent rounded-xl sm:text-lg text-sm py-2 cursor-pointer">
+						<h1 className="text-primary bg-transparent rounded-xl sm:text-lg text-sm py-2 cursor-pointer">
 							Muhm. Afnan
 						</h1>
 					</Link>
@@ -147,7 +127,7 @@ const LandingPage = () => {
 						href="https://www.linkedin.com/in/syed-asad-raza-/"
 						target="_blank"
 					>
-						<div className="lg:w-40 lg:h-40  md:w-24 md:h-24 w-16 h-16 rounded-full bg-white relative">
+						<div className="lg:w-40 lg:h-40  md:w-24 md:h-24 w-16 h-16 rounded-full bg-white relative -z-10">
 							<Image
 								src={asad}
 								alt="asad"
@@ -156,7 +136,7 @@ const LandingPage = () => {
 								className="rounded-full"
 							/>
 						</div>
-						<h1 className="text-secondary/90 bg-transparent rounded-xl sm:text-lg text-sm py-2 cursor-pointer">
+						<h1 className="text-primary bg-transparent rounded-xl sm:text-lg text-sm py-2 cursor-pointer">
 							Syed Asad
 						</h1>
 					</Link>
