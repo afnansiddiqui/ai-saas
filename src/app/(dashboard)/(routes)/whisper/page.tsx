@@ -9,13 +9,14 @@ import AudioTranslate from "../../../../components/AudioTranslate";
 import Header from "../../../../components//Header";
 import TextTranslate from "../../../../components/TextTranslate";
 import orbitiobg from "../../../../../public/bg-purple.jpg";
+import Navbar from "@/components/navbar";
 
 const Whisper = () => {
 	const [mode, setMode] = useState<Boolean>(true);
 
 	return (
 		<>
-			
+			<Navbar />
 			<div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
 				{/* <Header /> */}
 				<main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mb-[100px] sm:mt-20">

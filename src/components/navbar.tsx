@@ -7,14 +7,13 @@ export const Navbar = () => {
 		<>
 			<div className="flex justify-between items-center p-4">
 				<div>
-					<Link href="/">
+					<Link href="/dashboard">
 						<Button variant={"link"}>
 							<ArrowLeft className="mr-2 h-4 w-4" />
 						</Button>
 					</Link>
 				</div>
 				<div className="flex justify-end w-full  gap-x-2 items-center">
-					{/* <ModeToggle /> */}
 					<UserButton afterSignOutUrl="/" />
 				</div>
 			</div>

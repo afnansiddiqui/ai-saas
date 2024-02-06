@@ -20,6 +20,7 @@ import { Loader } from "@/components/loader";
 import { cn } from "@/lib/utils";
 import { UserAvatar } from "@/components/user-avatar";
 import { BotAvatar } from "@/components/bot-avatar";
+import Navbar from "@/components/navbar";
 
 interface ChatCompletionRequestMessage {
 	role: "user" | "assistant" | "system";
@@ -63,6 +64,7 @@ const ConversationPage = () => {
 
 	return (
 		<div>
+			<Navbar />
 			<Heading
 				title="Conversation"
 				description="Conversation model."

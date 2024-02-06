@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import { UserAvatar } from '@/components/user-avatar';
 import { BotAvatar } from '@/components/bot-avatar';
+import Navbar from '@/components/navbar';
 
 export default function App() {
   const { listening, transcript } = useSpeechRecognition();
@@ -56,6 +57,7 @@ export default function App() {
 
   return (
 		<>
+			<Navbar />
 			<div className="flex flex-col items-center justify-center">
 				<div className="flex flex-col w-[100vw] h-[75vh] p-10 gap-5">
 					{transcript && (
