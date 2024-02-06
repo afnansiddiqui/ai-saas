@@ -8,7 +8,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 				<div className="-z-10 fixed w-full h-[100vh]">
 					<Image src={orbitiobg} alt="orbitio" fill objectFit="cover" />
 				</div>
-        <Navbar />
+				{/* <Navbar /> */}
 				{children}
 			</main>
 		</body>
