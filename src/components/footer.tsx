@@ -12,7 +12,7 @@ function Footer() {
     return (
         <>
             <footer className="bg-white">
-                <div className="container mx-auto  py-[10rem]">
+                <div className="container  py-[10rem]">
                     <div className="flex justify-between flex-col md:flex-row  items-center md:items-start  md:gap-[5rem] text-left">
                         <div className="flex flex-col w-1/2 md:p-0 py-4 gap-8">
                             <h1 className="text-black text-3xl">Orbitio</h1>
@@ -31,21 +31,21 @@ function Footer() {
                                             {icon}
                                         </div>
                                     );
-                                })}
+                                })} 
                             </div>
                             <p className="text-[16px] font-medium text-[#646464]">
                                 Privacy Policy | © {new Date().getFullYear()}  <br />{" "}
                                 Design by{" "}
                                 <a
                                     href="/"
-                                >
+                                                                  >
                                     Orbitio
                                 </a>
                             </p>
                         </div>
 
-                        <div className="flex flex-col gap-8 relative mr-16">
-                            <p className="text-[22px] font-bold footer-main">Orbitio</p>
+                        <div className="flex flex-col gap-8 relative mr-16 my-16 md:my-0">
+                            <p className="text-[22px] font-bold footer-main text-black">Orbitio</p>
 
                             <span className="top-[33px] absolute w-[7rem] h-[4px] bg-[#ff0366]"></span>
 
