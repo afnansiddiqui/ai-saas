@@ -17,7 +17,7 @@ function Footer() {
                         <div className="flex flex-col w-1/2 md:p-0 py-4 gap-8">
                             <h1 className="text-black text-3xl">Orbitio</h1>
                             <p className="text-[15px] font-medium text-[#646464]">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur in officiis consectetur magnam? Doloremque earum ex perspiciatis molestiae asperiores animi voluptatem quis nobis ea.
+                               Orbitio - Pioneering the Future of AI. Explore, Innovate, and Create with us.
                             </p>
 
                             <div className="flex gap-7 text-[18px] text-[#646464] justify-center md:justify-start">
