@@ -58,7 +58,7 @@ export default function App() {
   return (
 		<>
 			<Navbar />
-			<div className="flex flex-col items-center justify-center">
+			<div className="flex flex-col items-center justify-center p-16">
 				<div className="flex flex-col w-[100vw] h-[75vh] p-10 gap-5">
 					{transcript && (
 						<div className="flex gap-5">
@@ -83,7 +83,7 @@ export default function App() {
 					{listening ? (
 						<p>Go Ahead I&apos;m Listening......</p>
 					) : (
-						<p>Click the button and ask me anything</p>
+						<p className='text-center mb-5'>Click the button and ask me anything</p>
 					)}
 					<button
 						onClick={() => {

@@ -24,17 +24,17 @@ const Home = () => {
 			{snap.intro && (
 				<motion.section className="home" {...slideAnimation("left")}>
 					<motion.header {...slideAnimation("down")}>
-						<Image
+						{/* <Image
 							src="/threejs.png"
 							alt="logo"
 							height={300}
 							width={300}
 							className="w-20 h-20 object-contain"
-						/>
+						/> */}
 					</motion.header>
 					<motion.div className="home-content" {...headContainerAnimation}>
 						<motion.div {...headTextAnimation}>
-							<h1 className="text-9xl font-bold ">
+							<h1 className="text-6xl font-bold">
 								3D AI <br className="xl:block hidden" /> Shirt
 							</h1>
 						</motion.div>

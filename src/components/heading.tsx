@@ -20,7 +20,7 @@ const Heading = (
 
 ) => {
     return (
-        <div className="px-4 lg:px-8 flex justify-center items-center gap-x-3 mb-8">
+        <div className="px-4 lg:px-8 flex justify-center items-center gap-x-3 mb-8 p-16">
             <div>
                 <h2 className="text-3xl font-bold">
                     {title}
